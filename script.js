@@ -26,14 +26,16 @@ const  cargarPeliculas = async () =>{
             datos.results.forEach(peli => {
                 peliculas +=`
                 <div class="pelicula">
-                    <img src="https://image.tmdb.org/t/p/w500/${peli.poster_path}">                
+                   <a href="info.html" ><img src="https://image.tmdb.org/t/p/w500/${peli.poster_path}"></a>              
                     <h3 class="title">${peli.title}</h3>
+                    <br>
+                    <p class="p">${peli.overview}</p>
                 </div>
                  `;
             });
 
             document.getElementById('contenedor').innerHTML = peliculas
-        // console.log(datos)
+        //  console.log(datos)
 
         }else if(respuesta.status === 401){
             console.log("Pusiste mal la llave")
